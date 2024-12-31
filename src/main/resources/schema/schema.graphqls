@@ -26,9 +26,9 @@ type Post {
 }
 type Comment {
     id: ID
-    postId: ID
+    postId: ID!
     content: String @NotBlank
-    publishedDate: String
+    publishedDate: String @NotBlank
 }
 input InputComment {
     id: ID
