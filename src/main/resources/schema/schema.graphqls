@@ -26,15 +26,15 @@ type Post {
 }
 type Comment {
     id: ID
-    postId: ID!
-    content: String @NotBlank
-    publishedDate: String @NotBlank
+    postId: ID
+    content: String
+    publishedDate: String
 }
 input InputComment {
     id: ID
     postId: ID!
-    content: String!
-    publishedDate: String
+    content: String! @NotBlank
+    publishedDate: String! @NotBlank
 }
 input InputPost {
     bannerUri: String! @NotBlank
