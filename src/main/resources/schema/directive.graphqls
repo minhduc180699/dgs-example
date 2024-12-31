@@ -1,0 +1,19 @@
+#Validate String
+directive @Size(min: Int = 0, max: Int = 2147483647) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+directive @NotNull on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+directive @NotBlank on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+directive @Pattern(regexp: String!) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+#Validate số nguyên
+directive @Min(value: Int!) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+directive @Max(value: Int!) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+directive @Range(min: Int!, max: Int!) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+#Validate số thực
+directive @DecimalMin(value: String!) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+directive @DecimalMax(value: String!) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+#Validate email
+directive @Email on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+#validate ngày tháng
+directive @Future on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+directive @Past on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+#validate UUID
+directive @UUID on INPUT_FIELD_DEFINITION | FIELD_DEFINITION

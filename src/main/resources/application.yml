@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: dgs
+  data:
+    mongodb:
+      #      uri: mongodb://user:password@host1:27017,host2:27017/mydatabase?replicaSet=myReplicaSet
+      uri: mongodb://localhost:27017/demo

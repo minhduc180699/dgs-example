@@ -1,0 +1,51 @@
+
+type Query {
+    getPosts(titleFilter: String): [Post]
+    getPost(id: ID): Post
+
+    getCommentByPostId(postId: String!): [Comment]
+}
+
+type Mutation {
+    createPost(inputPost: InputPost): Post
+    createPosts(inputPosts: [InputPost]): [Post]
+    updatePost(inputPost: ModifiedPost): Post
+    deletePost(id: ID): String
+    deleteAll: Int
+
+    createComment(inputComment: InputComment): Comment
+}
+
+type Post {
+    id: ID!
+    bannerUri: String!
+    title: String
+    description: String
+    publishedDate: String
+    comments: [Comment]
+}
+type Comment {
+    id: ID
+    postId: ID
+    content: String @NotBlank
+    publishedDate: String
+}
+input InputComment {
+    id: ID
+    postId: ID!
+    content: String!
+    publishedDate: String
+}
+input InputPost {
+    bannerUri: String! @NotBlank
+    title: String @NotBlank
+    description: String @NotBlank @Size (max: 5000, min: 10)
+    publishedDate: String @NotBlank
+}
+input ModifiedPost {
+    id: ID!
+    bannerUri: String!
+    title: String
+    description: String
+    publishedDate: String
+}
