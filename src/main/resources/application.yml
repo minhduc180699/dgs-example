@@ -5,3 +5,11 @@ spring:
     mongodb:
       #      uri: mongodb://user:password@host1:27017,host2:27017/mydatabase?replicaSet=myReplicaSet
       uri: mongodb://localhost:27017/demo
+
+nebula:
+  addresses: 127.0.0.1:9669
+  username: root
+  password: nebula
+  space: social_network
+  pool:
+    max-conn-size: 20 # Tùy chỉnh số lượng kết nối tối đa trong pool

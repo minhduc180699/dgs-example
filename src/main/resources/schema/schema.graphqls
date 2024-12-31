@@ -4,6 +4,10 @@ type Query {
     getPost(id: ID): Post
 
     getCommentByPostId(postId: String!): [Comment]
+
+    getUsers(filter: String): [User]
+    getUser(id: ID): User
+
 }
 
 type Mutation {
@@ -12,8 +16,12 @@ type Mutation {
     updatePost(inputPost: ModifiedPost): Post
     deletePost(id: ID): String
     deleteAll: Int
-
     createComment(inputComment: InputComment): Comment
+
+    createUser(inputUser: InputUser): User
+    createUsers(inputUsers: [InputUser]): [User]
+    updateUser(inputUser: InputModifiedUser): User
+    deleteUser(id: ID): String
 }
 
 type Post {

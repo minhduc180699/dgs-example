@@ -1,0 +1,27 @@
+
+type User {
+    id: ID!
+    name: String!
+    age: String
+    location: String
+}
+type Follow {
+    id: ID!
+    since: String!
+    intimacy: Float
+}
+input InputUser {
+    name: String!
+    age: String
+    location: String
+}
+input InputModifiedUser {
+    id: ID!
+    name: String!
+    age: String
+    location: String
+}
+input InputFollow {
+    since: String!
+    intimacy: Float
+}
