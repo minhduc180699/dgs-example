@@ -1,27 +1,32 @@
-
-type User {
+directive @depthLimit(maxDepth: Int!) on FIELD_DEFINITION
+type User  {
     id: ID!
     name: String!
-    age: String
+    age: Int
     location: String
+    friends: [User] @depthLimit(maxDepth: 2)
 }
-type Follow {
+type AddFriend {
     id: ID!
     since: String!
     intimacy: Float
 }
 input InputUser {
     name: String!
-    age: String
+    age: Int
     location: String
+}
+input InputAddFriend {
+    adder: String!
+    addee: String!
 }
 input InputModifiedUser {
     id: ID!
     name: String!
-    age: String
+    age: Int
     location: String
 }
 input InputFollow {
     since: String!
-    intimacy: Float
+    intimacy: Float!
 }

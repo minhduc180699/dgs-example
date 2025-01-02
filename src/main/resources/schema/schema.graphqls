@@ -18,10 +18,11 @@ type Mutation {
     deleteAll: Int
     createComment(inputComment: InputComment): Comment
 
-    createUser(inputUser: InputUser): User
-    createUsers(inputUsers: [InputUser]): [User]
-    updateUser(inputUser: InputModifiedUser): User
-    deleteUser(id: ID): String
+    createUser(inputUser: InputUser): Response
+    createUsers(inputUsers: [InputUser]): [Response]
+    updateUser(inputUser: InputModifiedUser): Response
+    deleteUser(id: ID): Response
+    addFriend(input: InputAddFriend): Response
 }
 
 type Post {
@@ -56,4 +57,8 @@ input ModifiedPost {
     title: String
     description: String
     publishedDate: String
+}
+type Response {
+    id: ID!,
+    message: String
 }
